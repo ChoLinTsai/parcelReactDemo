@@ -6,11 +6,12 @@ class Header extends Component {
 	render() {
 		return (
 			<header>
-				<ul id="overLayWrap">
-					<li className="overLayItem" id="overLay1"></li>
-					<li className="overLayItem" id="overLay2"></li>
-					<li className="overLayItem" id="overLay3"></li>
-					<li className="overLayItem" id="overLay4"></li>
+				<figure id={header.headerFig}></figure>
+				<ul id={header.overLayWrap}>
+					<li id={header.overLayDaredevil}></li>
+					<li id={header.overLayJessica}></li>
+					<li id={header.overLayLuke}></li>
+					<li id={header.overLayIron}></li>
 				</ul>
 			</header>
 		)
