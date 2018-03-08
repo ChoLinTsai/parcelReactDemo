@@ -30,4 +30,4 @@ ReactDom.render(
 
 
 
-console.log("Hello world");
+console.log("Hello world and checking everything is working");
