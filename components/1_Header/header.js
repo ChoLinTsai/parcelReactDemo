@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import header from './header.scss';
 import Navbar from '../2_Navbar/navbar';
 
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -18,93 +19,41 @@ class Header extends Component {
       iron: {
         display: ""
       }
-    }
-
+    };
   }
+
+
+
 
   mouseOver(e) {
     let getIndex = Number(e.target.dataset.index);
-    switch (getIndex) {
-      case 1:
-        this.setState({
-          daredevil: {
-            display: "block"
-          }
-        })
-        break;
+		let charList = ["daredevil", "jessica", "luke", "iron"];
+		let getChar = charList[getIndex-1];
 
-      case 2:
-        this.setState({
-          jessica: {
-            display: "block"
-          }
-        })
-        break;
+		this.setState({
+			[getChar]: {
+				display: "block"
+			}
+		})
 
-      case 3:
-        this.setState({
-          luke: {
-            display: "block"
-          }
-        })
-        break;
-
-      case 4:
-        this.setState({
-          iron: {
-            display: "block"
-          }
-        })
-        break;
-
-      default:
-
-    }
   }
 
   mouseLeave(e) {
     let getIndex = Number(e.target.dataset.index);
-    switch (getIndex) {
-      case 1:
-        this.setState({
-          daredevil: {
-            display: "none"
-          }
-        })
-        break;
+		let charList = ["daredevil", "jessica", "luke", "iron"];
+		let getChar = charList[getIndex-1];
 
-      case 2:
-        this.setState({
-          jessica: {
-            display: "none"
-          }
-        })
-        break;
+		this.setState({
+			[getChar]: {
+				display: "none"
+			}
+		})
 
-      case 3:
-        this.setState({
-          luke: {
-            display: "none"
-          }
-        })
-        break;
-
-      case 4:
-        this.setState({
-          iron: {
-            display: "none"
-          }
-        })
-        break;
-
-      default:
-
-    }
-  }
+	}
 
   render() {
 
-    const overlayData = [
+		const overlayData = [
       {
         index: 1,
         id: header.overLayDaredevil,
@@ -122,7 +71,7 @@ class Header extends Component {
         id: header.overLayIron,
         style: this.state.iron
       }
-    ]
+    ];
 
     const headerOverlayList = overlayData.map((data) =>
 			<li key={data.index}
@@ -140,7 +89,7 @@ class Header extends Component {
 				/>
 
 				<figure id={header.headerFig}></figure>
-				
+
 				<ul id={header.overLayWrap}>
 					{headerOverlayList}
 				</ul>
