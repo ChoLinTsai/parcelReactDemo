@@ -2,58 +2,53 @@ import React, {Component} from "react";
 import header from './header.scss';
 import Navbar from '../2_Navbar/navbar';
 
-
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       daredevil: {
-        display: ""
+        display: "none"
       },
       jessica: {
-        display: ""
+        display: "none"
       },
       luke: {
-        display: ""
+        display: "none"
       },
       iron: {
-        display: ""
-      }
+        display: "none"
+      },
     };
   }
 
 
-
-
   mouseOver(e) {
     let getIndex = Number(e.target.dataset.index);
-		let charList = ["daredevil", "jessica", "luke", "iron"];
-		let getChar = charList[getIndex-1];
+    let charList = Object.keys(this.state);
+    let getChar = charList[getIndex - 1];
 
-		this.setState({
-			[getChar]: {
-				display: "block"
-			}
-		})
-
+    this.setState({
+      [getChar]: {
+        display: "block"
+      }
+    })
   }
 
   mouseLeave(e) {
     let getIndex = Number(e.target.dataset.index);
-		let charList = ["daredevil", "jessica", "luke", "iron"];
-		let getChar = charList[getIndex-1];
+    let charList = Object.keys(this.state);
+    let getChar = charList[getIndex - 1];
 
-		this.setState({
-			[getChar]: {
-				display: "none"
-			}
-		})
-
-	}
+    this.setState({
+      [getChar]: {
+        display: "none"
+      }
+    })
+  }
 
   render() {
 
-		const overlayData = [
+    const overlayData = [
       {
         index: 1,
         id: header.overLayDaredevil,
@@ -74,28 +69,27 @@ class Header extends Component {
     ];
 
     const headerOverlayList = overlayData.map((data) =>
-			<li key={data.index}
-					data-index={data.index}
-					id={data.id}
-					style={data.style}>
-			</li>
-		)
+      <li key={data.index}
+          data-index={data.index}
+          id={data.id}
+          style={data.style}>
+      </li>
+    )
 
     return (
-			<header>
-				<Navbar
-					mouseOver={this.mouseOver.bind(this)}
-					mouseLeave={this.mouseLeave.bind(this)}
-				/>
+      <header>
+        <Navbar
+          mouseOver={this.mouseOver.bind(this)}
+          mouseLeave={this.mouseLeave.bind(this)} />
 
-				<figure id={header.headerFig}></figure>
+        <figure id={header.headerFig}></figure>
 
-				<ul id={header.overLayWrap}>
-					{headerOverlayList}
-				</ul>
+        <ul id={header.overLayWrap}>
+          {headerOverlayList}
+        </ul>
 
-	    </header>
-		)
+      </header>
+    )
   }
 }
 
