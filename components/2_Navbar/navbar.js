@@ -6,6 +6,10 @@ class Navbar extends Component {
     super(props);
   }
 
+  mouseOver() {
+    console.log(123);
+  }
+
   render() {
 
     const dataList = [
@@ -32,22 +36,26 @@ class Navbar extends Component {
       }
     ]
 
-    const navbarList = dataList.map((data) =>
-			<li key={data.index}
-					data-index={data.index}
-					className={data.className}
-					id={data.id}
-					onMouseOver={(e) => this.props.mouseOver(e)}
-					onMouseLeave={(e) => this.props.mouseLeave(e)}>
-      {data.name}
-    	</li>
-		)
+    const navbarList = dataList.map( (data) =>
+      <li key={data.index}
+          data-index={data.index}
+          className={data.className}
+          id={data.id}
+          onMouseOver={(e) => this.props.mouseOver(e)}
+          onMouseLeave={(e) => this.props.mouseLeave(e)}>
+        {data.name}
+      </li>
+    )
 
-    return (<nav id={navbar.navWrap}>
-      <ul id={navbar.ulContainer}>
-        {navbarList}
-      </ul>
-    </nav>)
+    return (
+      <nav id={navbar.navWrap}>
+
+        <ul id={navbar.ulContainer}>
+          {navbarList}
+        </ul>
+
+      </nav>
+    )
   }
 }
 

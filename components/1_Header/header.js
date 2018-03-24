@@ -7,27 +7,20 @@ class Header extends Component {
     super(props);
     this.state = {
       daredevil: {
-        display: ""
+        display: "none"
       },
       jessica: {
-        display: ""
+        display: "none"
       },
       luke: {
-        display: ""
+        display: "none"
       },
       iron: {
-        display: ""
+        display: "none"
       },
-      overlaySwitch: {
-        show: {
-          display: "block"
-        },
-        off: {
-          display: "none"
-        }
-      }
     };
   }
+
 
   mouseOver(e) {
     let getIndex = Number(e.target.dataset.index);
@@ -51,7 +44,6 @@ class Header extends Component {
         display: "none"
       }
     })
-
   }
 
   render() {
@@ -84,19 +76,20 @@ class Header extends Component {
       </li>
     )
 
-    return (<header>
-      <Navbar
-        mouseOver={this.mouseOver.bind(this)}
-        mouseLeave={this.mouseLeave.bind(this)}
-      />
+    return (
+      <header>
+        <Navbar
+          mouseOver={this.mouseOver.bind(this)}
+          mouseLeave={this.mouseLeave.bind(this)} />
 
-      <figure id={header.headerFig}></figure>
+        <figure id={header.headerFig}></figure>
 
-      <ul id={header.overLayWrap}>
-        {headerOverlayList}
-      </ul>
+        <ul id={header.overLayWrap}>
+          {headerOverlayList}
+        </ul>
 
-    </header>)
+      </header>
+    )
   }
 }
 

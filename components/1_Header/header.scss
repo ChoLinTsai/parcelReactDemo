@@ -10,7 +10,7 @@ header {
 	figure#headerFig {
 		position: absolute;
 		width: 100%;
-		height: 100%;
+		height: 92.5vh;
 		background: url('./img/header_defenders.jpg');
 		background-position: center top;
 		background-repeat: no-repeat;
@@ -31,15 +31,14 @@ header {
 		z-index: 2;
 
 		li#overLayDaredevil {
-			display: none;
 			grid-column: col-4/col-5;
 			grid-row: row-1/row-2;
 			background: #E32800;
 			opacity: $overlay-opacity;
+			transition: display 0.35s ease-in-out;
 		}
 
 		li#overLayJessica {
-			display: none;
 			grid-column: col-3/col-4;
 			grid-row: row-1/row-2;
 			background: #C806C8;
@@ -47,7 +46,6 @@ header {
 		}
 
 		li#overLayLuke {
-			display: none;
 			grid-column: col-2/col-3;
 			grid-row: row-1/row-2;
 			background: #FFCA18;
@@ -55,7 +53,6 @@ header {
 		}
 
 		li#overLayIron {
-			display: none;
 			grid-column: col-1/col-2;
 			grid-row: row-1/row-2;
 			background: #91DE00;
