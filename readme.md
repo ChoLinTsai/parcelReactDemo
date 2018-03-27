@@ -1,12 +1,8 @@
 ## 2018/3/27
 
-after a few day of react training via youtube tutorials
+after a few days of react training via youtube tutorials I got a better understanding.
 
-I got a better understanding.
-
-also I found a very cool npm package that I can use Youtube
-
-video in my react project => react-youtbue!
+also I found a very cool npm package that I can use Youtube video in my react project => react-youtube!
 
 
 
