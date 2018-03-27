@@ -2,16 +2,8 @@ import React, {Component} from "react";
 import navbar from './navbar.scss';
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  mouseOver() {
-    console.log(123);
-  }
 
   render() {
-
     const dataList = [
       {
         index: 1,
