@@ -22,13 +22,13 @@ class Daredevil extends Component {
     }
 
     return (
-		<section className={style.daredevilContent}>
-      <Youtube
+			<section className={style.daredevilContent}>
+				<Youtube
 				videoId="2Cn3DVV0LHY"
 				opts={opts}
 				onPlay={() => this.videoOn()}
-				onPause={this.videoPause}/>
-    </section>
+				onPause={this.videoPause} />
+			</section>
 		);
   }
 }
