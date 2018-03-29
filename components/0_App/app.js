@@ -5,19 +5,22 @@ import './app.scss';
 
 import Header from '../1_Header/header';
 import Navbar from '../2_Navbar/navbar';
-import Daredevil from '../3_Daredevil/daredevil';
+import BannerDaredevil from '../3_Banner_Daredevil/Banner_daredevil';
+import Daredevil from '../4_Daredevil/daredevil';
 
-class App extends React.Component {
+class App extends Component {
 
   render() {
     return (
-    <div id="app">
-      <Header />
-      <Daredevil />
-    </div>)
+      <div id="app">
+        <Header/>
+        <BannerDaredevil/>
+        <Daredevil/>
+      </div>
+    )
   }
 }
 
-ReactDom.render(<App />, document.getElementById('root'))
+ReactDom.render(<App/>, document.getElementById('root'))
 
 console.log("Hello world and checking everything is working");
