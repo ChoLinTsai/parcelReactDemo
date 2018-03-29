@@ -1,3 +1,8 @@
+## 2018/3/29
+
+testing a few events for video and I got some new ideas.
+
+
 ## 2018/3/27
 
 after a few days of react training via youtube tutorials I got a better understanding.
