@@ -21,15 +21,9 @@ class Daredevil extends Component {
       }
     }
 
-    return (
-			<section className={style.daredevilContent}>
-	      <Youtube
-					videoId="2Cn3DVV0LHY"
-					opts={opts}
-					onPlay={() => this.videoOn()}
-					onPause={this.videoPause} />
-	    </section>
-		);
+    return (<section className={style.daredevilContent}>
+      <Youtube videoId="2Cn3DVV0LHY" opts={opts} onPlay={() => this.videoOn()} onPause={this.videoPause}/>
+    </section>);
   }
 }
 
