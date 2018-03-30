@@ -1,3 +1,10 @@
+## 2018/3/30
+
+Not much progress, but learned some new stuff
+
+It still took a few hours.
+
+
 ## 2018/3/29
 
 testing a few events for video and I got some new ideas.
