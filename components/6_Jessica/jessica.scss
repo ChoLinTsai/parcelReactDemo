@@ -1,0 +1,25 @@
+.jessicaContent {
+  width: 100vw;
+	height: 100vh;
+	background: url("./img/jessica.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	display: grid;
+	grid-template-columns:
+		[c1] 1fr [c2] 640px [c3] 150px [c4];
+	grid-template-rows:
+		[r1] 250px [r2] 360px [r3] 1fr [r4];
+
+	span {
+		width: 100%;
+		height: 100%;
+		grid-column: [c2]/[c3];
+		grid-row: [r2]/[c3];
+
+		iframe {
+			box-shadow: 0 0 100px #C806C8;
+		}
+	}
+
+}

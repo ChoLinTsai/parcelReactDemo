@@ -7,6 +7,9 @@ import Header from '../1_Header/header';
 import Navbar from '../2_Navbar/navbar';
 import BannerDaredevil from '../3_Banner_Daredevil/Banner_daredevil';
 import Daredevil from '../4_Daredevil/daredevil';
+import BannerJessica from '../5_Banner_Jessica/Banner_jessica';
+import Jessica from '../6_Jessica/jessica';
+
 
 class App extends Component {
 
@@ -16,6 +19,8 @@ class App extends Component {
         <Header/>
         <BannerDaredevil/>
         <Daredevil/>
+        <BannerJessica />
+        <Jessica />
       </div>
     )
   }

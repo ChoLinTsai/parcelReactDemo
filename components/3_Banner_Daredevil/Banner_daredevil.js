@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import style from './Banner_daredevil.scss'
 
 class BannerDaredevil extends Component {

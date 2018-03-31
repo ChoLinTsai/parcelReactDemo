@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import style from './daredevil.scss';
 import Youtube from "react-youtube"
@@ -6,14 +6,13 @@ import Youtube from "react-youtube"
 class Daredevil extends Component {
 
   componentWillMount() {
-    window.addEventListener('scroll', () => this.onScroll(), true);
+    // window.addEventListener('scroll', () => this.onScroll(), true);
   }
 
   onScroll() {
     let videoNode = ReactDOM.findDOMNode(this.refs.video);
-    let windowY = window.scrollY;
-    console.log(videoNode.offsetTop);
-    console.log(windowY);
+    let sWindowY = window.scrollY;
+
   }
 
   videoOn() {
@@ -33,7 +32,7 @@ class Daredevil extends Component {
       }
     }
 
-    return (
+    return(
       <section className={style.daredevilContent}>
         <Youtube
           videoId="2Cn3DVV0LHY"
