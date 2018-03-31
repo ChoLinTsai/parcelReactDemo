@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import style from './Banner_jessica.scss';
-
 
 class BannerJessica extends Component {
 
@@ -14,6 +13,5 @@ class BannerJessica extends Component {
     )
   }
 }
-
 
 export default BannerJessica;

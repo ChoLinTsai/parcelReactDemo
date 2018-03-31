@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import style from './jessica.scss';
 import Youtube from "react-youtube"
 
-
 class Jessica extends Component {
-
 
   render() {
     const opts = {
@@ -15,7 +13,7 @@ class Jessica extends Component {
       }
     }
 
-    return(
+    return (
       <section className={style.jessicaContent}>
         <Youtube
           videoId="hSvnepZS26s"
@@ -27,8 +25,5 @@ class Jessica extends Component {
     )
   }
 }
-
-
-
 
 export default Jessica;

@@ -1,3 +1,10 @@
+## 2018/3/31
+
+Jessica section finished
+
+I found react findDOMNode is pretty useful.
+
+
 ## 2018/3/30
 
 Not much progress, but learned some new stuff
