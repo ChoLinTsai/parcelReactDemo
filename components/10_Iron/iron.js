@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import style from './jessica.scss';
+import style from './iron.scss';
 import Youtube from "react-youtube"
 
-class Jessica extends Component {
-
+class Iron extends Component {
   render() {
     const opts = {
       width: '640',
@@ -14,10 +13,10 @@ class Jessica extends Component {
     }
 
     return (
-      <section className={style.jessicaContent}>
+      <section className={style.ironContent}>
         <Youtube
-          videoId="hSvnepZS26s"
-          opts={opts}
+          videoId="f9OKL5no-S0"
+          opts={opts} 
           onPlay={() => this.videoOn()}
           onPause={this.videoPause}
           ref="video" />
@@ -26,4 +25,4 @@ class Jessica extends Component {
   }
 }
 
-export default Jessica;
+export default Iron;
