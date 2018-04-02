@@ -1,3 +1,9 @@
+## 2018/4/2
+
+Added Luke cage and Iron fist sections
+
+
+
 ## 2018/3/31
 
 Jessica section finished
