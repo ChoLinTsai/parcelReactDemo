@@ -9,6 +9,7 @@ class BannerJessica extends Component {
         <p className={style.p1}>Jessica</p>
         <figure></figure>
         <p className={style.p2}>Jones</p>
+
       </section>
     )
   }

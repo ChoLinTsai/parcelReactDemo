@@ -4,19 +4,41 @@ import style from './daredevil.scss';
 import Youtube from "react-youtube"
 
 class Daredevil extends Component {
-
-  componentWillMount() {
-    // window.addEventListener('scroll', () => this.onScroll(), true);
+  constructor(props) {
+    super(props);
+    this.state = {
+      style: {
+        opacity: 0.25
+      },
+      isPlaying: false,
+      isPause: true
+    }
   }
 
-  onScroll() {
-    let videoNode = ReactDOM.findDOMNode(this.refs.video);
-    let sWindowY = window.scrollY;
+  showUp() {
+    this.setState({
+      style: {
+        opacity: 1
+      }
+    })
+
+    console.log(this);
+    this.refs.video.playVideo();
+    
+  }
+
+  hideOff(e) {
+    this.setState({
+      style: {
+        opacity: 0.25
+      }
+    });
 
   }
+
 
   videoOn() {
-    console.log("Video on Play");
+
   }
 
   videoPause() {
@@ -30,16 +52,26 @@ class Daredevil extends Component {
       playerVars: {
         autoplay: 0
       }
+
     }
 
     return(
       <section className={style.daredevilContent}>
-        <Youtube
-          videoId="2Cn3DVV0LHY"
-          opts={opts}
-          onPlay={() => this.videoOn()}
-          onPause={this.videoPause}
-          ref="video" />
+
+        <div
+          style={this.state.style}
+          onMouseOver={ () => this.showUp() }
+          onMouseLeave= { (e) => this.hideOff(e) } >
+
+            <Youtube
+              ref="video"
+              videoId="2Cn3DVV0LHY"
+              opts={opts}
+              onPlay={() => this.videoOn()}
+              onPause={ () => this.videoPause()} />
+
+        </div>
+
       </section>
     );
   }

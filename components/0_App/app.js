@@ -13,6 +13,8 @@ import BannerLuke from '../7_Banner_Luke/Banner_luke';
 import Luke from '../8_Luke/luke';
 import BannerIron from '../9_Banner_Iron/Banner_iron';
 import Iron from '../10_Iron/iron';
+import BannerDefenders from '../11_Banner_Defenders/Banner_defenders';
+import Defenders from '../12_Defenders/defenders';
 
 class App extends Component {
 
@@ -28,6 +30,8 @@ class App extends Component {
         <Luke />
         <BannerIron />
         <Iron />
+        <BannerDefenders />
+        <Defenders />
       </div>
     )
   }
