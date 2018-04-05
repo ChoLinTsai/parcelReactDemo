@@ -3,47 +3,90 @@ import ReactDOM from "react-dom";
 import style from './daredevil.scss';
 import Youtube from "react-youtube"
 
-class Daredevil extends Component {
+export default class Daredevil extends Component {
 
-  componentWillMount() {
-    window.addEventListener('scroll', () => this.onScroll(), true);
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+      style: {
+        opacity: 0.25
+      },
+      iframeId: "iframe",
+      videoSrc: "https://www.youtube.com/embed/",
+      videoId: "2Cn3DVV0LHY",
+      enableJS: "?enablejsapi=1"
+    }
+
   }
 
-  onScroll() {
-    let videoNode = ReactDOM.findDOMNode(this.refs.video);
-    let windowY = window.scrollY;
-    console.log(videoNode.offsetTop);
-    console.log(windowY);
+
+  componentDidMount() {
+    let loadYT;
+    if (!loadYT) {
+      loadYT = new Promise( (resolve) => {
+        let tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        let firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        window.onYouTubeIframeAPIReady = () => resolve(window.YT);
+
+      })
+    }
+
+    loadYT.then( (YT) => {
+      this.player = new YT.Player(this.state.iframeId, {
+        events: {
+          onStateChange: this.playerStateChanged
+        }
+      })
+    })
+
   }
 
-  videoOn() {
-    console.log("Video on Play");
+  playerStateChanged(e) {
+    console.log(e.data);
   }
 
-  videoPause() {
-    console.log("Video Paused");
+
+
+  mouseOver() {
+    this.setState({
+      style: {
+        opacity: 1
+      }
+    })
+
+    this.player.playVideo();
+  }
+
+  mouseLeave() {
+    this.setState({
+      style: {
+        opacity: 0.25
+      }
+    });
+
+    this.player.pauseVideo();
   }
 
   render() {
-    const opts = {
-      width: '640',
-      height: '360',
-      playerVars: {
-        autoplay: 0
-      }
-    }
 
     return (
       <section className={style.daredevilContent}>
-        <Youtube
-          videoId="2Cn3DVV0LHY"
-          opts={opts}
-          onPlay={() => this.videoOn()}
-          onPause={this.videoPause}
-          ref="video" />
+
+        <iframe
+          id={this.state.iframeId}
+          src={`${this.state.videoSrc}${this.state.videoId}${this.state.enableJS}`}
+          frameBorder="0"
+          style={this.state.style}
+          onMouseOver={ () => this.mouseOver() }
+          onMouseLeave={ () => this.mouseLeave() } >
+
+        </iframe>
+
       </section>
     );
   }
 }
-
-export default Daredevil;
