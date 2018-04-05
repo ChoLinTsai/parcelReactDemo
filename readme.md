@@ -1,3 +1,12 @@
+## 2018/4/5
+
+After a few days of trying and testing.
+
+I finally got youtube iframe player api working with custom event triggers.
+
+Next, I am going to try some new stuff.
+
+
 ## 2018/4/2
 
 Added Luke cage and Iron fist sections

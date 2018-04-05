@@ -11,16 +11,24 @@
 	grid-template-rows:
 		[r1] 200px [r2] 360px [r3] 1fr [r4];
 
-  div {
-    width: 100%;
-    height: 100%;
+
+  iframe {
+    width: 640px;
+    height: 360px;
     grid-column: [c2]/[c3];
     grid-row: [r2]/[c3];
     transition: opacity 0.35s ease-in-out;
-    span {
-      iframe {
-        box-shadow: 0 0 100px #E32800;
-      }
-    }
   }
+
+  // span {
+  //   width: 100%;
+  //   height: 100%;
+  //   grid-column: [c2]/[c3];
+  //   grid-row: [r2]/[c3];
+  //   transition: opacity 0.35s ease-in-out;
+  //   iframe {
+  //     box-shadow: 0 0 100px #E32800;
+  //   }
+  // }
+
 }
