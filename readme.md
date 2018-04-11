@@ -1,3 +1,14 @@
+## 2018/4/11
+
+I figured out how to use youtube iframe api to load videos.
+
+It took me a couple of days of trying, testing and asking on stackoverflow.
+
+In the end, I created the function fits my ideas, no compromise.
+
+Next project, I am gonna try fetch api to get github users or stackoverflow users to set up some sort of dashboard UI.
+
+
 ## 2018/4/5
 
 After a few days of trying and testing.

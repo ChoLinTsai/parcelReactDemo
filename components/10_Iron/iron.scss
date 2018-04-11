@@ -11,14 +11,11 @@
   grid-template-rows:
     [r1] 250px [r2] 360px [r3] 1fr [r4];
 
-  span {
-    width: 100%;
-    height: 100%;
+  iframe {
+    width: 640px;
+    height: 360px;
     grid-column: [c2]/[c3];
     grid-row: [r2]/[c3];
-
-    iframe {
-      box-shadow: 0 0 100px #91DE00;
-    }
+    box-shadow: 0 0 100px #91DE00;
   }
 }

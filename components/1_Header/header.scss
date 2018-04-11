@@ -34,9 +34,9 @@ header {
 		li#overLayDaredevil {
 			grid-column: col-4/col-5;
 			grid-row: row-1/row-2;
-			background: #E32800;
+			background-color: #E32800;
 			opacity: $overlay-opacity;
-			transition: display 0.35s ease-in-out;
+			
 		}
 
 		li#overLayJessica {
