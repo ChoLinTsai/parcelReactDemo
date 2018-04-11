@@ -16,7 +16,18 @@ import Iron from '../10_Iron/iron';
 import BannerDefenders from '../11_Banner_Defenders/Banner_defenders';
 import Defenders from '../12_Defenders/defenders';
 
+
 class App extends Component {
+
+  componentDidMount() {
+
+    let tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+    let firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  }
+
 
   render() {
     return (
@@ -38,5 +49,3 @@ class App extends Component {
 }
 
 ReactDom.render(<App/>, document.getElementById('root'))
-
-console.log("Hello world and checking everything is working");

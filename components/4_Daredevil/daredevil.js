@@ -1,7 +1,6 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from "react";
 import style from './daredevil.scss';
-import Youtube from "react-youtube"
+import YTReady from '../resource/youtubeReady';
 
 export default class Daredevil extends Component {
 
@@ -13,62 +12,81 @@ export default class Daredevil extends Component {
       style: {
         opacity: 0.25
       },
-      iframeId: "iframe",
+      iframeId: "daredevilIframe",
       videoSrc: "https://www.youtube.com/embed/",
       videoId: "2Cn3DVV0LHY",
-      enableJS: "?enablejsapi=1"
+      enableJS: "?enablejsapi=1",
+      vidState: null
     }
 
   }
 
 
   componentDidMount() {
-    let loadYT;
-    if (!loadYT) {
-      loadYT = new Promise( (resolve) => {
-        let tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
-        let firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        window.onYouTubeIframeAPIReady = () => resolve(window.YT);
 
-      })
-    }
+    let youtubeReady = YTReady;
 
-    loadYT.then( (YT) => {
+    youtubeReady.then( (YT) => {
       this.player = new YT.Player(this.state.iframeId, {
         events: {
-          onStateChange: this.playerStateChanged
+          'onReady': () => this.onPlayerReady(),
+          'onStateChange': () => this.onPlayerStateChange()
         }
       })
     })
 
   }
 
-  playerStateChanged(e) {
-    console.log(e.data);
+  onPlayerReady() {
+
+    this.setState({
+      vidState: this.player.getPlayerState()
+    });
+
   }
 
+  onPlayerStateChange() {
+
+    this.setState({
+      vidState: this.player.getPlayerState()
+    });
+
+  }
 
 
   mouseOver() {
+
+    this.player.playVideo();
+
     this.setState({
       style: {
         opacity: 1
-      }
+      },
+      vidState: this.player.getPlayerState()
     })
 
-    this.player.playVideo();
   }
 
   mouseLeave() {
-    this.setState({
-      style: {
-        opacity: 0.25
-      }
-    });
 
-    this.player.pauseVideo();
+    let getVidState = this.state.vidState;
+    if (getVidState === 1) {
+      this.setState({
+        style: {
+          opacity: 1
+        }
+      });
+    } else if (getVidState === 2 || getVidState === 0) {
+      this.setState({
+        style: {
+          opacity: 0.25
+        },
+        vidState: this.player.getPlayerState()
+      });
+
+      this.player.pauseVideo();
+    }
+
   }
 
   render() {
@@ -83,7 +101,6 @@ export default class Daredevil extends Component {
           style={this.state.style}
           onMouseOver={ () => this.mouseOver() }
           onMouseLeave={ () => this.mouseLeave() } >
-
         </iframe>
 
       </section>
